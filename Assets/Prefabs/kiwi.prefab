@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3861370695005846372}
   - component: {fileID: 5222821015826270653}
   - component: {fileID: 5374377574594489280}
+  - component: {fileID: -651604903646546326}
   m_Layer: 0
   m_Name: kiwi
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.0785, y: -1.4382, z: 10}
-  m_LocalScale: {x: 0.09634695, y: 0.1190392, z: 1}
+  m_LocalScale: {x: 0.1382772, y: 0.17, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -118,9 +119,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0, y: 0}
+  m_Offset: {x: -0.06, y: 0.14}
   serializedVersion: 2
-  m_Radius: 2.53
+  m_Radius: 2.27
 --- !u!50 &5374377574594489280
 Rigidbody2D:
   serializedVersion: 4
@@ -148,3 +149,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-651604903646546326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430203445666084368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebce34fd72a624634acb1ce13dcbc7c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  mergeScore: 20
+  nextFruitPrefab: {fileID: 8430203445666084368, guid: aa7fc60d310b345b59ee3db5922de13a, type: 3}

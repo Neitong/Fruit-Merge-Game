@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class FruitDragController : MonoBehaviour
 {
-    public float minX = -2f;
-    public float maxX = 2f;
+    public float minX = -1.5f;
+    public float maxX = 1.5f;
 
     void Update()
     {
