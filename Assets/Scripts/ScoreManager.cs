@@ -30,6 +30,6 @@ public class ScoreManager : MonoBehaviour
     void UpdateUI()
     {
         if (scoreText != null)
-            scoreText.text = score.ToString();
+            scoreText.text = KhmerNumerals.ToKhmerNumerals(score);
     }
 }
