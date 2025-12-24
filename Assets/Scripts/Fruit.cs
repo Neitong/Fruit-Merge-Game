@@ -26,6 +26,12 @@ public class Fruit : MonoBehaviour
 
             Vector2 mergePos = (transform.position + other.transform.position) / 2f;
 
+            // Play merge sound
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayMerge();
+            }
+
             // Spawn next fruit
             Instantiate(nextFruitPrefab, mergePos, Quaternion.identity);
 

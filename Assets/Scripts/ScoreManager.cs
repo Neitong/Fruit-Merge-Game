@@ -8,12 +8,19 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
     private int score = 0;
 
+    public int CurrentScore => score;
+
     private void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         else
+        {
             Destroy(gameObject);
+        }
     }
 
     private void Start()
