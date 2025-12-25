@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: {fileID: 1795548147}
   rowPrefab: {fileID: 8003452547735458682, guid: 317029d0b5acd47108159a8ce99a9ffd, type: 3}
-  leaderboardUrl: http://localhost:6767/game/all-time
+  leaderboardUrl: https://fruit-merge-backend.onrender.com/game/leaderboard
 --- !u!4 &1074823516
 Transform:
   m_ObjectHideFlags: 0

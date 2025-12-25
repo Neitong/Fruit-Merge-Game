@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalScoreText: {fileID: 1640132348}
-  startGameUrl: http://localhost:6767/game
+  startGameUrl: https://fruit-merge-backend.onrender.com/game
 --- !u!4 &326961340
 Transform:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class GameOverUI : MonoBehaviour
     {
         finalScoreText.text =
             KhmerNumerals.ToKhmerNumerals(
-                GameSession.Instance.sessionScore
+                ScoreManager.Instance.CurrentScore
             );
     }
 
@@ -35,7 +35,7 @@ public class GameOverUI : MonoBehaviour
             AudioManager.Instance.PlayButton();
         }
         GameSession.Instance.ResetSession();
-        SceneManager.LoadScene("Welcome");
+        SceneManager.LoadScene("WelcomeScene");
     }
 
     IEnumerator StartNewGame()
