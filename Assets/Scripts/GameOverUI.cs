@@ -9,7 +9,7 @@ public class GameOverUI : MonoBehaviour
     public TMP_Text finalScoreText;
 
     [Header("API")]
-    public string startGameUrl = "http://localhost:6767/game";
+    public string startGameUrl = "https://fruit-merge-backend.onrender.com/game";
 
     void Start()
     {

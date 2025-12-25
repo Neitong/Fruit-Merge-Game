@@ -5,7 +5,7 @@ using System.Collections;
 
 public class StartGameButton : MonoBehaviour
 {
-    public string startGameUrl = "http://localhost:6767/game";
+    public string startGameUrl = "https://fruit-merge-backend.onrender.com/game";
 
     public void OnPlayClicked()
     {

@@ -9,7 +9,7 @@ public class LeaderboardManager : MonoBehaviour
     public GameObject rowPrefab;
 
     [Header("API")]
-    public string leaderboardUrl = "http://localhost:6767/game/all-time";
+    public string leaderboardUrl = "https://fruit-merge-backend.onrender.com/game/leaderboard";
 
     void Start()
     {

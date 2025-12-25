@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class TopBoundaryLose : MonoBehaviour
 {
-    public string baseUrl = "http://localhost:6767/game";
+    public string baseUrl = "https://fruit-merge-backend.onrender.com/game";
     public float loseDelay = 1.2f; // seconds before losing
 
     private bool isGameOver = false;
