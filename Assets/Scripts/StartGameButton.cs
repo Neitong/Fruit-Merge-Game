@@ -18,30 +18,31 @@ public class StartGameButton : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        UnityWebRequest req = new UnityWebRequest(startGameUrl, "POST");
-
-        // empty JSON body
-        byte[] body = System.Text.Encoding.UTF8.GetBytes("{}");
-        req.uploadHandler = new UploadHandlerRaw(body);
-        req.downloadHandler = new DownloadHandlerBuffer();
-
-        req.SetRequestHeader("Content-Type", "application/json");
-        Debug.Log("POST " + startGameUrl);
-
-        yield return req.SendWebRequest();
-
-        if (req.result != UnityWebRequest.Result.Success)
+        using (UnityWebRequest req = new UnityWebRequest(startGameUrl, "POST"))
         {
-            Debug.LogError("Start game failed: " + req.error);
-            yield break;
+            // empty JSON body
+            byte[] body = System.Text.Encoding.UTF8.GetBytes("{}");
+            req.uploadHandler = new UploadHandlerRaw(body);
+            req.downloadHandler = new DownloadHandlerBuffer();
+
+            req.SetRequestHeader("Content-Type", "application/json");
+            Debug.Log("POST " + startGameUrl);
+
+            yield return req.SendWebRequest();
+
+            if (req.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Start game failed: " + req.error);
+                yield break;
+            }
+
+            StartGameResponse response =
+                JsonUtility.FromJson<StartGameResponse>(req.downloadHandler.text);
+
+            GameSession.Instance.gameId = response.gameSessionId;
+
+            SceneManager.LoadScene("PlayScene");
         }
-
-        StartGameResponse response =
-            JsonUtility.FromJson<StartGameResponse>(req.downloadHandler.text);
-
-        GameSession.Instance.gameId = response.gameSessionId;
-
-        SceneManager.LoadScene("PlayScene");
     }
 }
 

@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340057889e16d4473b4db47e8e02de96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startGameUrl: http://localhost:6767/game
+  startGameUrl: https://fruit-merge-backend.onrender.com/game
 --- !u!4 &68228386
 Transform:
   m_ObjectHideFlags: 0
