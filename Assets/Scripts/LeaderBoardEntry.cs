@@ -1,6 +1,6 @@
 [System.Serializable]
 public class LeaderboardEntry
 {
-    public string name;
+    public string _id;
     public int score;
 }

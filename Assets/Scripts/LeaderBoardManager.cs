@@ -9,7 +9,7 @@ public class LeaderboardManager : MonoBehaviour
     public GameObject rowPrefab;
 
     [Header("API")]
-    public string leaderboardUrl = "http://localhost:6767/global/all-time";
+    public string leaderboardUrl = "http://localhost:6767/game/all-time";
 
     void Start()
     {
@@ -54,9 +54,11 @@ public class LeaderboardManager : MonoBehaviour
         {
             GameObject row = Instantiate(rowPrefab, content);
 
-            row.transform.Find("Rank").GetComponent<TMP_Text>().text = $"#{i + 1}";
-            row.transform.Find("Name").GetComponent<TMP_Text>().text = entries[i].name;
-            row.transform.Find("Score").GetComponent<TMP_Text>().text = entries[i].score.ToString();
+            row.transform.Find("Rank").GetComponent<TMP_Text>().text =
+                KhmerNumerals.ToKhmerNumerals($"#{i + 1}");
+            row.transform.Find("Name").GetComponent<TMP_Text>().text = entries[i]._id;
+            row.transform.Find("Score").GetComponent<TMP_Text>().text =
+                KhmerNumerals.ToKhmerNumerals(entries[i].score);
         }
     }
 }
