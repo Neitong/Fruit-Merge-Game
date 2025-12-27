@@ -26,7 +26,7 @@ A captivating fruit merging puzzle game inspired by the rich culture and landsca
 
 Watch the game in action! See the complete gameplay experience from start to finish:
 
-<video src="./demo.mp4" controls width="720"></video>
+[![Watch Demo](game-pic/image5.png)](https://www.youtube.com/watch?v=7kMyU8soRTQ)
 
 ## 🎯 How to Play
 
