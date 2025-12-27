@@ -13,7 +13,15 @@ public class LeaderboardManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(FetchLeaderboard());
+        // If we came here via LoadingScene, use cached entries instantly.
+        if (LeaderboardCache.Entries != null && LeaderboardCache.Entries.Length > 0)
+        {
+            Populate(LeaderboardCache.Entries);
+        }
+        else
+        {
+            StartCoroutine(FetchLeaderboard());
+        }
     }
 
     IEnumerator FetchLeaderboard()
@@ -56,7 +64,8 @@ public class LeaderboardManager : MonoBehaviour
 
             row.transform.Find("Rank").GetComponent<TMP_Text>().text =
                 KhmerNumerals.ToKhmerNumerals($"#{i + 1}");
-            row.transform.Find("Name").GetComponent<TMP_Text>().text = entries[i]._id;
+            string displayName = entries[i]._id;
+            row.transform.Find("Name").GetComponent<TMP_Text>().text = displayName;
             row.transform.Find("Score").GetComponent<TMP_Text>().text =
                 KhmerNumerals.ToKhmerNumerals(entries[i].score);
         }

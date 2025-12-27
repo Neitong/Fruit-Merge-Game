@@ -39,7 +39,14 @@ public class TopBoundaryLose : MonoBehaviour
         {
             Debug.Log("Fruit stayed too long at top → GAME OVER");
             isGameOver = true;
-            StartCoroutine(SendFinalScore());
+            LoadingResult result = new LoadingResult();
+            SceneTransition.LoadWithLoadingScene(
+                operation: SendFinalScore(result),
+                result: result,
+                successScene: "GameOverScene",
+                loadingScene: SceneTransition.DefaultLoadingSceneName,
+                failScene: "GameOverScene" // even if API fails, still go to game over
+            );
         }
     }
 
@@ -49,7 +56,7 @@ public class TopBoundaryLose : MonoBehaviour
             stayTimers.Remove(other.gameObject);
     }
 
-    IEnumerator SendFinalScore()
+    IEnumerator SendFinalScore(LoadingResult result)
     {
         string sessionId = GameSession.Instance.gameId;
         int finalScore = ScoreManager.Instance.CurrentScore;
@@ -66,7 +73,14 @@ public class TopBoundaryLose : MonoBehaviour
 
         yield return req.SendWebRequest();
 
-        SceneManager.LoadScene("GameOverScene");
+        if (req.result != UnityWebRequest.Result.Success)
+        {
+            result.success = false;
+            result.error = req.error;
+            yield break;
+        }
+
+        result.success = true;
     }
 }
 

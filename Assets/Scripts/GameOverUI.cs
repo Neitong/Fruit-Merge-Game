@@ -25,7 +25,13 @@ public class GameOverUI : MonoBehaviour
         {
             AudioManager.Instance.PlayButton();
         }
-        StartCoroutine(StartNewGame());
+        LoadingResult result = new LoadingResult();
+        SceneTransition.LoadWithLoadingScene(
+            operation: StartNewGame(result),
+            result: result,
+            successScene: "PlayScene",
+            loadingScene: SceneTransition.DefaultLoadingSceneName
+        );
     }
 
     public void OnQuit()
@@ -38,7 +44,7 @@ public class GameOverUI : MonoBehaviour
         SceneManager.LoadScene("WelcomeScene");
     }
 
-    IEnumerator StartNewGame()
+    IEnumerator StartNewGame(LoadingResult result)
     {
         // reset local state first
         GameSession.Instance.ResetSession();
@@ -54,7 +60,8 @@ public class GameOverUI : MonoBehaviour
 
         if (req.result != UnityWebRequest.Result.Success)
         {
-            Debug.LogError("Start new game failed: " + req.error);
+            result.success = false;
+            result.error = req.error;
             yield break;
         }
 
@@ -62,8 +69,7 @@ public class GameOverUI : MonoBehaviour
             JsonUtility.FromJson<StartGameResponse>(req.downloadHandler.text);
 
         GameSession.Instance.gameId = response.gameSessionId;
-
-        SceneManager.LoadScene("PlayScene");
+        result.success = true;
     }
 }
 

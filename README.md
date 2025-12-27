@@ -49,20 +49,30 @@ From smallest to largest:
 
 <div align="center">
 
-![Welcome Screen](game-pic/image1.png)
-_Welcome screen with temple jungle atmosphere and Khmer interface_
-
-![Gameplay](game-pic/image2.png)
-_Active gameplay showing fruit physics and temple stone container_
-
-![About Screen](game-pic/image3.png)
-_About screen with game information and development team credits_
-
-![Leaderboard](game-pic/image4.png)
-_Global leaderboard with Khmer numerals and competitive rankings_
-
-![Fruit Collection](game-pic/image5.png)
-_Complete fruit hierarchy showcase with traditional Cambodian fruits_
+<table>
+  <tr>
+    <td>
+      <img src="game-pic/image5.png" alt="Game Screenshot 5" width="180"><br>
+      <sub>Welcome scene with play button, leaderboard button and info button</sub>
+    </td>
+    <td>
+      <img src="game-pic/image4.png" alt="Game Screenshot 4" width="180"><br>
+      <sub>Leaderboard scene showing score ranking with game id</sub>
+    </td>
+    <td>
+      <img src="game-pic/image3.png" alt="Game Screenshot 3" width="180"><br>
+      <sub>Info Scene</sub>
+    </td>
+    <td>
+      <img src="game-pic/image2.png" alt="Game Screenshot 2" width="180"><br>
+      <sub>Fruit merging mechanics in action and main gameplay scene</sub>
+    </td>
+    <td>
+      <img src="game-pic/image1.png" alt="Game Screenshot 1" width="180"><br>
+      <sub>Game over screen and final scoring</sub>
+    </td>
+  </tr>
+</table>
 
 </div>
 
@@ -166,7 +176,7 @@ This game celebrates Cambodian culture through:
 
 **Experience the mystical world of Cambodian temple jungles while enjoying classic puzzle gameplay!**
 
-[🌐 Visit Website](https://raksaoc.github.io/fruit-merge-website/) | [📱 Download APK](./jou-em.apk) | [🎮 View Game Code](https://github.com/Neitong/Fruit-Merge-Game.git)
+[🌐 Visit Website](https://raksaoc.github.io/fruit-merge-website/) | [📱 Download APK](https://raksaoc.github.io/fruit-merge-website/assets/jou-em.apk) | [🎮 View Game Code](https://github.com/Neitong/Fruit-Merge-Game.git)
 
 _Created with ❤️ for preserving and celebrating Cambodian culture through interactive gaming_
 

@@ -13,10 +13,16 @@ public class StartGameButton : MonoBehaviour
         {
             AudioManager.Instance.PlayButton();
         }
-        StartCoroutine(StartGame());
+        LoadingResult result = new LoadingResult();
+        SceneTransition.LoadWithLoadingScene(
+            operation: StartGame(result),
+            result: result,
+            successScene: "PlayScene",
+            loadingScene: SceneTransition.DefaultLoadingSceneName
+        );
     }
 
-    IEnumerator StartGame()
+    IEnumerator StartGame(LoadingResult result)
     {
         using (UnityWebRequest req = new UnityWebRequest(startGameUrl, "POST"))
         {
@@ -32,7 +38,8 @@ public class StartGameButton : MonoBehaviour
 
             if (req.result != UnityWebRequest.Result.Success)
             {
-                Debug.LogError("Start game failed: " + req.error);
+                result.success = false;
+                result.error = req.error;
                 yield break;
             }
 
@@ -40,8 +47,7 @@ public class StartGameButton : MonoBehaviour
                 JsonUtility.FromJson<StartGameResponse>(req.downloadHandler.text);
 
             GameSession.Instance.gameId = response.gameSessionId;
-
-            SceneManager.LoadScene("PlayScene");
+            result.success = true;
         }
     }
 }
