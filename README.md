@@ -146,6 +146,7 @@ The visual identity was crafted through **advanced prompt engineering with Gemin
 - **អោយ ច័ន្ទរក្សា** (Ory Chanraksa)
 - **កែវ ហេងណៃតុង** (Keo Heng Neitong)
 - **សៅ វិសាល** (Sao Visal)
+(Note: All members are involed in this repo's development implementation and ideation, due to conflict issues we worked through .zip files and single computer hence inconsistent commit history)
 
 ## 🎨 Cultural Inspiration
 
