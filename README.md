@@ -22,6 +22,12 @@ A captivating fruit merging puzzle game inspired by the rich culture and landsca
 - 🏆 **Global Leaderboard**: Compete with players worldwide
 - 🎵 **Immersive Audio**: Temple-themed sound effects and ambient music
 
+## 🎬 Demo Video
+
+Watch the game in action! See the complete gameplay experience from start to finish:
+
+<video src="./demo.mp4" controls width="720"></video>
+
 ## 🎯 How to Play
 
 Merge identical fruits to evolve them into higher-level fruits and earn points:
@@ -146,7 +152,7 @@ The visual identity was crafted through **advanced prompt engineering with Gemin
 - **អោយ ច័ន្ទរក្សា** (Ory Chanraksa)
 - **កែវ ហេងណៃតុង** (Keo Heng Neitong)
 - **សៅ វិសាល** (Sao Visal)
-(Note: All members are involed in this repo's development implementation and ideation, due to conflict issues we worked through .zip files and single computer hence inconsistent commit history)
+  (Note: All members are involed in this repo's development implementation and ideation, due to conflict issues we worked through .zip files and single computer hence inconsistent commit history)
 
 ## 🎨 Cultural Inspiration
 
